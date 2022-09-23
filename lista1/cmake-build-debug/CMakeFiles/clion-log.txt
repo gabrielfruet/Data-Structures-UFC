@@ -1,0 +1,4 @@
+/home/gabrielfruet/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/gabrielfruet/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/ninja/linux/ninja -G Ninja -S /home/gabrielfruet/dev/c++/estrutura-de-dados/lista1 -B /home/gabrielfruet/dev/c++/estrutura-de-dados/lista1/cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/gabrielfruet/dev/c++/estrutura-de-dados/lista1/cmake-build-debug

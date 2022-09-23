@@ -1,0 +1,3 @@
+/home/gabrielfruet/dev/c++/estrutura-de-dados/lista1/cmake-build-debug/CMakeFiles/lista1.dir
+/home/gabrielfruet/dev/c++/estrutura-de-dados/lista1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/gabrielfruet/dev/c++/estrutura-de-dados/lista1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
