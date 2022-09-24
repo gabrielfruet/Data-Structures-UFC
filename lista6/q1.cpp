@@ -26,7 +26,7 @@ public :
     }
     // m é todo desenfileirar
     int desenfileirar(){
-        if(cont >= 0){
+        if(!vazia()){
             ini = (ini+1)%tam_max;
             cont--;
             return v[ini];
