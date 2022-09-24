@@ -12,7 +12,7 @@ public :
     FilaInt(int tamanho){
         v = new int [ tamanho ]; // cria vetor de inteiros com o tamanho desejado
         tam_max = tamanho ;
-        ini = 0;
+        ini = -1;
         fim = -1;
         cont = 0;
     }

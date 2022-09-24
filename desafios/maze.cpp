@@ -44,6 +44,9 @@ public:
     T ultimo(){
         return L[fim];
     }
+    bool vazia(){
+        return count == 0;
+    }
 };
 
 void imprime_matriz(int n, char* M[]){
@@ -133,10 +136,12 @@ int main ()
         }
 
         if(desempilhar || caminhos <= 1){
-            //TEM QUE DESEMPILHAR ANTES DE EMPILHAR;
             Posicao d = p.desempilhar();
             if(desempilhar){
                 maze[d.l][d.c] = '0';
+            }
+            while(!temp.vazia()){
+                p.empilhar(temp.desempilhar());
             }
         }
 
