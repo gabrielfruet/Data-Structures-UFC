@@ -64,7 +64,3 @@ int main(){
         printf ("linha %d , coluna %d\n", p.l , p.c );
     }
 }
- . . . . f .
-         i
--1 0 1 2 3 4 
-   _,_,_,_,_
