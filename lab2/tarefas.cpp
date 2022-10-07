@@ -177,6 +177,7 @@ int procura_na_matriz(NoMat* cabeca, int linha, int coluna){
     for(int j = 0; j < coluna; j++){
         it_coluna = it_coluna->direita;
     }
+    return it_coluna->chave;
 }
 
 void preenche_matriz(NoMat* cabeca, function<int(int,int)> entry_fn){
