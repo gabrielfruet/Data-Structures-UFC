@@ -67,10 +67,12 @@ struct SimulAloc{
         }
         //Caso o trecho de memoria alocada inicie antes do primeiro.
         if(!prim or prim->ini > ini){
-            Noh* desalocar;
+            Noh* resto;
             disp->prox = prim;
-            desalocar = unir(disp,prim);
-            delete desalocar;
+            //Tenta unir com o proximo, caso possivel
+            resto = unir(disp,prim);
+            delete resto;
+            //Novo no se torna o primeiro
             prim = disp;
         }else{ //Caso o trecho de memoria alocado esteja depois do final do primeiro trecho disponivel.
             Noh* it = prim;
@@ -79,17 +81,17 @@ struct SimulAloc{
                 it = it->prox;
             }
             //No auxiliar usado para desalocar
-            Noh* desalocar;
+            Noh* resto;
             disp->prox = it->prox;
             it->prox = disp;
             //Unir com o proximo, caso seja possivel
             if(disp->prox){
-                desalocar = unir(disp, disp->prox);
-                delete desalocar;
+                resto = unir(disp, disp->prox);
+                delete resto;
             }
             //Unir com o anterior, caso seja possivel
-            desalocar = unir(it,disp);
-            delete desalocar;
+            resto = unir(it,disp);
+            delete resto;
         }
         return false;
     }
