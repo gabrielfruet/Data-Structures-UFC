@@ -1,0 +1,31 @@
+RESULTADO: Erro de Compilação!
+
+Nota: 0
+
+Saída do Compilador (1º Teste):
+
+--------------------------------------------------
+main.cpp: In function 'bool teste_basico(SimulAloc&, VLista&)':
+main.cpp:21:26: error: 'Noh' is not a member of 'SimulAloc'
+    auto it = V.begin();  SimulAloc::Noh *n = S.prim;
+                          ^~~~~~~~~
+main.cpp:21:42: error: 'n' was not declared in this scope
+    auto it = V.begin();  SimulAloc::Noh *n = S.prim;
+                                          ^
+main.cpp:21:48: error: 'struct SimulAloc' has no member named 'prim'
+    auto it = V.begin();  SimulAloc::Noh *n = S.prim;
+                                                ^~~~
+main.cpp: In function 'int main()':
+main.cpp:37:10: error: 'struct SimulAloc' has no member named 'inicializar'
+    if (S.inicializar(10, 50)) return 1;
+          ^~~~~~~~~~~
+main.cpp:41:10: error: 'struct SimulAloc' has no member named 'alocar'
+    if (S.alocar(15) != 45) return 3;
+          ^~~~~~
+main.cpp:45:10: error: 'struct SimulAloc' has no member named 'desalocar'
+    if (S.desalocar(45,15)) return 5;
+          ^~~~~~~~~
+main.cpp:49:6: error: 'struct SimulAloc' has no member named 'terminar'
+    S.terminar();
+      ^~~~~~~~
+--------------------------------------------------
