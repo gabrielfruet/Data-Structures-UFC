@@ -87,7 +87,7 @@ struct SimulAloc{
                 desalocar = unir(disp, disp->prox);
                 delete desalocar;
             }
-            //Unir com o anterior caso seja possivel
+            //Unir com o anterior, caso seja possivel
             desalocar = unir(it,disp);
             delete desalocar;
         }
