@@ -21,8 +21,7 @@ struct SimulAloc{
     int alocar(int tam){
         if(tam != 0 and prim){
             int endereco;
-            //Caso a primeira memoria contigua satisfaca
-            if(prim->tam >= tam){
+            if(prim->tam >= tam){ //Caso a primeira memoria contigua satisfaca
                 endereco = prim->ini + prim->tam - tam;
                 prim->tam -= tam;
 
@@ -65,8 +64,7 @@ struct SimulAloc{
         }catch(bad_alloc &b){
             return true;
         }
-        //Caso o trecho de memoria alocada inicie antes do primeiro.
-        if(!prim or prim->ini > ini){
+        if(!prim or prim->ini > ini){ //Caso o trecho de memoria alocada inicie antes do primeiro.
             Noh* resto;
             disp->prox = prim;
             //Tenta unir com o proximo, caso possivel
@@ -80,7 +78,7 @@ struct SimulAloc{
             while(it->prox and ult(disp) > it->prox->ini){
                 it = it->prox;
             }
-            //No auxiliar usado para desalocar
+            //No auxiliar usado para desalocar caso haja subproduto(resto)
             Noh* resto;
             disp->prox = it->prox;
             it->prox = disp;
