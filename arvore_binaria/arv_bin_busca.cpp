@@ -19,15 +19,15 @@ struct ArvBinaria{
         *atual = new NoArv{e, nullptr, nullptr};
     }
     NoArv* busca(int e){
-        NoArv** atual = &raiz;
-        while(*atual){
-            if(e <= (*atual)->elem){
-                atual = &(*atual)->esq;
+        NoArv* atual = raiz;
+        while(atual){
+            if(e <= atual->elem){
+                atual = atual->esq;
             }else{
-                atual = &(*atual)->dir;
+                atual = atual->dir;
             }
         }
-        return *atual;
+        return atual;
     }
     bool pertence(int e){
         return busca(e) != nullptr;
@@ -43,6 +43,7 @@ struct ArvBinaria{
             }
         }
         if(*atual == nullptr) return;
+
         if((*atual)->esq == nullptr){
             desalocar = *atual; 
             (*atual) = (*atual)->dir;
@@ -70,6 +71,14 @@ void imprimir_crescente(ArvBinaria::NoArv* r){
         imprimir_crescente(r->esq);
         cout << r->elem << endl;
         imprimir_crescente(r->dir);
+    }
+}
+
+void arvore_desalocar(ArvBinaria::NoArv* r){
+   if(r){
+        arvore_desalocar(r->esq);
+        arvore_desalocar(r->dir);
+        delete r;
     }
 }
 
