@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stack>
 #define W 4
 
 using namespace std;
@@ -82,6 +83,17 @@ void arvore_desalocar(ArvBinaria::NoArv* r){
     }
 }
 
+void arvore_desalocar_iterativo(ArvBinaria& arv){
+    ArvBinaria::NoArv* it = arv.raiz;
+    stack<ArvBinaria::NoArv*> p;
+    do{
+        while(it){
+            p.push(it);
+            it = it->esq;
+        }
+    }while(!p.empty());
+}
+
 void printarv(ArvBinaria::NoArv *r, int s){
     if(r != nullptr){
         printarv(r->dir, s + W);
@@ -95,10 +107,10 @@ void printarv(ArvBinaria::NoArv *r, int s){
 
 int main(){
     ArvBinaria a;
-    for(int i = 0; i < 5; i++){
+    for(int i = 0; i < 8; i++){
         a.insere(rand() % 100);
     }
-    imprimir_crescente(a.raiz);
-
+    printarv(a.raiz,0);
+    //arvore_desalocar_iterativo(a);
     return 0;
 }

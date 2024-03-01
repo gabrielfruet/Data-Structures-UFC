@@ -86,25 +86,20 @@ struct ArvAVL{
         return busca(e) != nil;
     }
     void remove(int e){
-        NoAVL* pai = nil;
         NoAVL** atual = &raiz;  
         NoAVL* desalocar;
         while((*atual)->elem != e){
-            pai = *atual;
-            if(e <= (*atual)->elem){
-                atual = &(*atual)->esq;
-            }else{
-                atual = &(*atual)->dir;
-            }
+            if(e <= (*atual)->elem) atual = &(*atual)->esq;
+            else atual = &(*atual)->dir;
         }
         if(*atual == nil) return;
 
         if((*atual)->esq == nil){
             desalocar = *atual; 
-            (*atual) = (*atual)->dir;
+            *atual = (*atual)->dir;
         }else if((*atual)->dir == nil){
             desalocar = *atual;
-            (*atual) = (*atual)->esq;
+            *atual = (*atual)->esq;
         }else{
             NoAVL** it_sucessor = &(*atual)->dir;
             while((*it_sucessor)->esq){
